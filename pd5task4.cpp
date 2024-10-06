@@ -1,4 +1,5 @@
 #include<iostream>
+#include<string>
 using namespace std;
 int projectTimeCalculation(int,int,int);
 main()
@@ -15,17 +16,20 @@ projectTimeCalculation(hours,days,workers);
 }
 int projectTimeCalculation(int hours,int days,int workers)
 {
- int th,whour,workerh,phour;
+ int th,whour,workerh,phour,time;
  th=10*0.10; //training hours
  whour=10-th; //working day hours
  workerh=whour*days*workers; //worker hours
  if(workerh>=hours)
  {
-    cout<<"yes!"<<workerh-hours<<" hours are left.";
+    time=workerh-hours;
+    cout<<"yes!"+to_string(time)+" hours are left.";
+    return time;
  }
  if(hours>workerh)
  {
-    cout<<"Not enough time!"<<hours-workerh<<" hours needed.";
+    time=hours-workerh;
+    cout<<"Not enough time!"+to_string(time)+" hours needed.";
+    return time;
  }
-return 0;
 }
